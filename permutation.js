@@ -18,7 +18,7 @@
 var permute = function(nums) {
     var results = [];
     
-    if (nums === null) {
+    if (nums === null || nums.length === 0) {
         return results;
     }
     
@@ -29,6 +29,7 @@ var permute = function(nums) {
 
 function permuteHelper(results, subset, nums) {
     for (var i = 0; i < nums.length; i++) {
+    	// not going to add itself!!
         if (subset.indexOf(nums[i]) === -1) {
             subset.push(nums[i]);
             permuteHelper(results, subset, nums);
@@ -36,6 +37,7 @@ function permuteHelper(results, subset, nums) {
         }
     }
     
+    // got one result
     if (subset.length === nums.length) {
         results.push(subset.slice());
     }
