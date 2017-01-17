@@ -15,6 +15,8 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
+
+// O(n!) An^n = n!
 var permute = function(nums) {
     var results = [];
     

@@ -19,6 +19,9 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
+
+// O(2^n) <= O(n*2^n)
+// [1, 2, 3] 2^3 = 8 kinds of possibilities
 var subsets = function(nums) {
     var results = [];
 
