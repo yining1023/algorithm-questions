@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 162. Find Peak Element
 - 153. Find Minimum in Rotated Sorted Array
 - 69. Sqrt(x)
 - 47. Permutations II
