@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 144. Binary Tree Preorder Traversal
 - 110. Balanced Binary Tree
 - 104. Maximum Depth of Binary Tree
 - 33. Search in Rotated Sorted Array
