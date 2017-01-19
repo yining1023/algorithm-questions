@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 104. Maximum Depth of Binary Tree
 - 33. Search in Rotated Sorted Array
 - 278. First Bad Version
 - 162. Find Peak Element
