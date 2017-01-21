@@ -2,9 +2,8 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
-- Two Sum
+- 1. Two Sum
 - 124. Binary Tree Maximum Path Sum
-- Binary Tree Maximum Path Sum II
 - 144. Binary Tree Preorder Traversal
 - 110. Balanced Binary Tree
 - 104. Maximum Depth of Binary Tree
