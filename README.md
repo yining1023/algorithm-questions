@@ -2,6 +2,8 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 240. Search a 2D Matrix II
+- 74. Search a 2D Matrix
 - 114. Flatten Binary Tree to Linked List
 - 160. Intersection of Two Linked Lists
 - 237. Delete Node in a Linked List
