@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 114. Flatten Binary Tree to Linked List
 - 160. Intersection of Two Linked Lists
 - 237. Delete Node in a Linked List
 - 102. Binary Tree Level Order Traversal
