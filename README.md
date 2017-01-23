@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- Subtree with Maximum Average
 - 1. Two Sum
 - 124. Binary Tree Maximum Path Sum
 - 144. Binary Tree Preorder Traversal
