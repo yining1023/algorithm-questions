@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 237. Delete Node in a Linked List
 - 102. Binary Tree Level Order Traversal
 - Subtree with Maximum Average
 - 1. Two Sum
