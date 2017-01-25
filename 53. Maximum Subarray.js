@@ -17,6 +17,8 @@
  * @param {number[]} nums
  * @return {number}
  */
+
+// slide window!!!!
 var maxSubArray = function(nums) {
     // O(n)
     if (nums === null || nums.length === 0) {

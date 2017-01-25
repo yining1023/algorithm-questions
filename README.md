@@ -2,6 +2,8 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 122. Best Time to Buy and Sell Stock II
+- 53. Maximum Subarray
 - 445. Add Two Numbers II
 - 2. Add Two Numbers
 - 56. Merge Intervals
