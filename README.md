@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 2. Add Two Numbers
 - 56. Merge Intervals
 - 240. Search a 2D Matrix II
 - 74. Search a 2D Matrix
