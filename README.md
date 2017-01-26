@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 62. Unique Paths
 - 155. Min Stack
 - 283. Move Zeroes
 - 138. Copy List with Random Pointer
