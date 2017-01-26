@@ -18,7 +18,9 @@ var twoSum = function(nums, target) {
     if (nums === null || nums.length <= 0) {
         return [];
     }
-    // hash is an OBJECT!!!! not array
+    // hash is an OBJECT!!!! not array, it has keys and values!
+    // {key: sum - number, value: this number's index}
+    // find it's sum - number, return it's index too
     var hash = {};
     
     for (var i = 0; i < nums.length; i++) {
