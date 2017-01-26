@@ -2,7 +2,9 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 121. Best Time to Buy and Sell Stock
 - 122. Best Time to Buy and Sell Stock II
+- 123. Best Time to Buy and Sell Stock III
 - 53. Maximum Subarray
 - 445. Add Two Numbers II
 - 2. Add Two Numbers
