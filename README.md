@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 42. Trapping Rain Water
 - 63. Unique Paths II
 - 62. Unique Paths
 - 155. Min Stack
