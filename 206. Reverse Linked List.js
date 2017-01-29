@@ -41,3 +41,22 @@ var reverseList = function(head) {
     
     return prev;
 };
+
+// no need to have node actually
+var reverseList = function(head) {
+    if (head === null) {
+        return null;
+    }
+    
+    var prev = null;
+    
+    while (head !== null) {
+        var temp = head.next;
+        head.next = prev;
+        
+        prev = head;
+        head = temp;
+    }
+    
+    return prev;
+};

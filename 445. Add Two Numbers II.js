@@ -86,6 +86,7 @@ function addReversed2Lists(l1, l2) {
     return head.next;
 }
 
+// related to Q 206, reverse linked list!!
 function reverseLinkedList(point) {
     var prev = null;
     while (point !== null) {

@@ -2,6 +2,9 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 92. Reverse Linked List II
+- 206. Reverse Linked List
+- 117. Populating Next Right Pointers in Each Node II
 - 116. Populating Next Right Pointers in Each Node
 - 42. Trapping Rain Water
 - 63. Unique Paths II
