@@ -39,7 +39,7 @@
 var getIntersectionNode = function(headA, headB) {
     var lengthA = getLength(headA),
         lengthB = getLength(headB);
-        
+    // find a way to align A,B   
     while (lengthA > lengthB) {
         headA = headA.next;
         lengthA--;
@@ -50,6 +50,7 @@ var getIntersectionNode = function(headA, headB) {
         lengthB--;
     }
     
+    // When A,B has the same rest length
     while (headA && headB) {
         if (headA === headB) {
             return headA;
