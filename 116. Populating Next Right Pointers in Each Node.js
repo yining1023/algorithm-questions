@@ -81,4 +81,40 @@ var connect = function(root) {
     connect(root.right);
 };
 
+// solution 2
+var connect = function(root) {
+    if (root === null) {
+        return;
+    }
+    
+    var parent = root,
+        next = parent.left;
+
+    while (parent !== null && next !== null) {
+        // having a new level, set prev = null
+        var prev = null;
+        
+        while (parent !== null) {
+            if (prev === null) {
+                prev = parent.left;
+            } else {
+                prev.next = parent.left;
+                prev = prev.next;
+            }
+            
+            if (prev) {
+                prev = {};
+            }
+            prev.next = parent.right;
+            prev = prev.next;
+
+            // move parent to next too
+            parent = parent.next;
+        }
+        
+        // go to th next level
+        parent = next;
+        next = parent.left;
+    }
+};
 
