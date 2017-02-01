@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 146. LRU Cache
 - 92. Reverse Linked List II
 - 206. Reverse Linked List
 - 117. Populating Next Right Pointers in Each Node II
@@ -25,7 +26,9 @@ Answers for algorithm-questions from Leetcode in Javascript.
 - 160. Intersection of Two Linked Lists
 - 237. Delete Node in a Linked List
 - 102. Binary Tree Level Order Traversal
-- Subtree with Maximum Average
+- 298. Binary Tree Longest Consecutive Sequence
+- Minimum Subtree
+- Binary Tree Longest Consecutive Sequence
 - 1. Two Sum
 - 124. Binary Tree Maximum Path Sum
 - 144. Binary Tree Preorder Traversal

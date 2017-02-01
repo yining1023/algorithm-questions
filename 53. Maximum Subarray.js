@@ -32,6 +32,8 @@ var maxSubArray = function(nums) {
         maxSum = Math.max(maxSum, sum);
         
         // when sum < 0, reset sum, means that start from the next number, why??
+        // here is where to slide the window
+        // first number has to > 0, if not, the result can give up this number easily
         if (sum < 0) {
             sum = 0;
         }
