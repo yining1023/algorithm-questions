@@ -67,7 +67,6 @@ function helper(root, path) {
         path = path + '->' + JSON.stringify(root.right.val);
         helper(root.right, path);
         var tempR = path.split('->');
-        path = tempR.slice(0, -1);
+        path = tempR.slice(0, tempR.length - 1).join("->");
     }
 }
-

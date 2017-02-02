@@ -72,3 +72,38 @@ var helper = function(root) {
     // if no leftLast or rightLast, return the root alone
     return root;
 }
+
+
+var flatten = function(root) {
+    helper(root);
+};
+
+function helper(root) {
+    if (root === null) {
+        return root;
+    }
+    
+    var leftLast = helper(root.left);
+    var rightLast = helper(root.right);
+    
+    // move left to the right, update the tree
+    if (leftLast !== undefined && leftLast !== null) {
+        leftLast.right = root.right;
+        root.right = root.left;
+        root.left = null;
+    }
+    
+    if (rightLast !== null && rightLast !== undefined) {
+        return rightLast;
+    }
+    
+    // the reason that we need to return leftLast is that the upper level needs it
+    // if there is no rightLast, the leftLast should connect to the upper root.right
+    // leftLast is just the last node, node the whole sequence
+    if (leftLast !== null && leftLast !== undefined) {
+        return leftLast;
+    }
+    
+    return root;
+}
+

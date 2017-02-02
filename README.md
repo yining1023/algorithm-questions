@@ -2,6 +2,8 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 236. Lowest Common Ancestor of a Binary Tree
+- 257. Binary Tree Paths
 - 113. Path Sum II
 - 146. LRU Cache
 - 92. Reverse Linked List II

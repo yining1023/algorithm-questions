@@ -16,6 +16,33 @@
  
 // base on find the max depth of a binary tree, compare depth of left, and right, return isbalanced left && right
 // (1)left, right are both balanced, (2)and depth left right is no more than 1.
+
+var isBalanced = function(root) {
+    if (root === null) {
+        return true;
+    }
+    
+    var leftDepth = findDepth(root.left);
+    var rightDepth = findDepth(root.right);
+    
+    if (Math.abs(leftDepth - rightDepth) <= 1 && isBalanced(root.right) && isBalanced(root.left)) {
+        return true;
+    }
+    
+    return false;
+}
+
+function findDepth(root) {
+    if (root === null) {
+        return 0;
+    }
+    
+    var leftDepth = findDepth(root.left);
+    var rightDepth = findDepth(root.right);
+    
+    return Math.max(leftDepth, rightDepth, 0) + 1;
+}
+
 var isBalanced = function(root) {
     if (root === null) {
         return true;
