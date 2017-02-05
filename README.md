@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 207. Course Schedule
 - 98. Validate Binary Search Tree
 - 236. Lowest Common Ancestor of a Binary Tree
 - 257. Binary Tree Paths
