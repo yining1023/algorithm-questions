@@ -46,6 +46,7 @@ var lowestCommonAncestor = function(root, p, q) {
       return root;
   }
 
+  // don not forget to pass in p and q too
   var leftLCA = lowestCommonAncestor(root.left, p, q);
   var rightLCA = lowestCommonAncestor(root.right, p, q);
   

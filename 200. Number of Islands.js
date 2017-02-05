@@ -16,6 +16,68 @@
 // 00011
 // Answer: 3
 
+
+/**
+ * @param {character[][]} grid
+ * @return {number}
+ */
+// dfs could be stack overflow so, bfs is better
+// BFS
+var numIslands = function(grid) {
+    if (grid === null || grid.length === 0 || grid[0].length === 0) {
+        return 0;
+    }
+    
+    const m = grid.length,
+          n = grid[0].length;
+    
+    let islands = 0;
+
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            if (grid[i][j] === '1') {
+                bfs(grid, i, j, m, n);
+                islands++;
+            }
+        }
+    }
+    
+    return islands;
+};
+
+function bfs(grid, x, y, m, n) {
+    let queue = [];
+    const directionX = [0, 1, -1, 0];
+    const directionY = [1, 0, 0, -1];
+    
+    // 放进去的不是grid[x][y]本身！是x, y坐标
+    queue.push({x: x, y: y});
+    grid[x][y] = '0';
+    
+    while (queue.length > 0) {
+        let head = queue.shift();
+
+        for (let s = 0; s < 4; s++) {
+            // shift出来的head的x, y！！！不是直接的x，y
+            let nei = {x: head.x + directionX[s],
+                      y: head.y + directionY[s]
+            };
+
+            if (nei.x < 0 || nei.y < 0 || nei.x >= m || nei.y >= n) {
+                continue;
+            }
+
+            if (grid[nei.x][nei.y] === '1') {
+                // 不是push grid。 push nei！
+                queue.push(nei);
+                // weird typo... 变量名不要太长 不然【】会看错
+                grid[nei.x][nei.y] = '0';
+            }
+        }
+    }
+    return;
+}
+
 /**
  * @param {character[][]} grid
  * @return {number}
