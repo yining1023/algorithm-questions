@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 261. Graph Valid Tree
 - 210. Course Schedule II
 - 207. Course Schedule
 - 98. Validate Binary Search Tree
