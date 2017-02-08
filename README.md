@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 317. Shortest Distance from All Buildings
 - 133. Clone Graph
 - 261. Graph Valid Tree
 - 210. Course Schedule II
