@@ -2,6 +2,8 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 127. Word Ladder
+- 139. Word Break
 - 266. Palindrome Permutation
 - 39. Combination Sum
 - 131. Palindrome Partitioning
