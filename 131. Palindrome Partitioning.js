@@ -35,12 +35,14 @@ var partition = function(s) {
 }
 
 function dfs(s, startIndex, partition, results) {
+	// when to exit
     if (startIndex === s.length) {
         // deep copy
         results.push(partition.slice());
         return;
     }
     
+    // traverse all possibilities on this level
     for (let i = startIndex; i < s.length; i++) {
         let subStr = s.slice(startIndex, i + 1);
         // end should be i, not i + 1!

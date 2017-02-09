@@ -29,6 +29,7 @@ var subsets = function(nums) {
         return results;
     }
 
+    // sort!! 为了避免重复
     var sortedNums = nums.sort(function(a, b) {
         return a - b;
     });
