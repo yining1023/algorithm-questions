@@ -44,6 +44,7 @@ function dfs(s, startIndex, partition, results) {
     
     // traverse all possibilities on this level
     for (let i = startIndex; i < s.length; i++) {
+        // 相当于在i这一点加一个|分隔符，subset是取i这一点的数
         let subStr = s.slice(startIndex, i + 1);
         // end should be i, not i + 1!
         // if (!isPalindrome(s, startIndex, i)) {
