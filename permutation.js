@@ -17,6 +17,42 @@
  */
 
 // O(n!) An^n = n!
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+// when to exit, when permutation.length === nums.length
+// 因为顺序不同是不同结果，【1，2，3】 【1，3，2】所以不能从i+1开始选，要从头开始选，只要之前没选过就可以
+// 所以也不需要startindex
+var permute = function(nums) {
+    let results = [];
+    if (nums === null || nums.length === 0) {
+        return results;
+    }
+    
+    dfsHelper([], nums, results);
+    return results;
+}
+
+function dfsHelper(permutation, nums, results) {
+    if (permutation.length === nums.length) {
+        // deep copy
+        results.push(permutation.slice());
+        return; // return!!
+    }
+    
+    for (let i = 0; i < nums.length; i++) {
+        // use indexOf to check if this number is in the array or not
+        if (permutation.indexOf(nums[i]) === -1) {
+            permutation.push(nums[i]);
+            dfsHelper(permutation, nums, results);
+            permutation.pop();
+        }
+    }
+}
+
+
+// 2
 var permute = function(nums) {
     var results = [];
     

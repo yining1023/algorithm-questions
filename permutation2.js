@@ -12,6 +12,48 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
+ 
+var permuteUnique = function(nums) {
+    let results = [];
+    if (nums === null || nums.length === 0) {
+        return results;
+    }
+    
+    let sortedNums = nums.sort( (a, b) => {
+        return a - b;
+    });
+    
+    dfsHelper([], [], sortedNums, results);
+    return results;
+}
+// 4 arguements!! don'r forget visited
+function dfsHelper(permutation, visited, sortedNums, results) {
+    if (permutation.length === sortedNums.length) {
+        // deep copy
+        results.push(permutation.slice());
+        return; // return!!
+    }
+    
+    for (let i = 0; i < sortedNums.length; i++) {
+        // visited[i] === true代表着这个数现在在permutation里面 在里面就不再重复加
+        // 或者两个数相等，前一个数没visit过，就跳过，因为第二个数已经不用在加了，加了就是重复的答案了
+        if (visited[i] || (i !== 0 && !visited[i - 1]) && sortedNums[i] === sortedNums[i - 1]) {
+            continue;
+        }
+        // permutation 1 use indexOf to check if this number is in the array or not
+        // but in 2, we use visited flag, because there is duplicates in nums
+        permutation.push(sortedNums[i]);
+        visited[i] = true;
+        dfsHelper(permutation, visited, sortedNums, results);
+        permutation.pop();
+        visited[i] = false;
+    }
+}
+
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
 var permuteUnique = function(nums) {
     var results = [];
     if (nums === null || nums.length === 0) {
