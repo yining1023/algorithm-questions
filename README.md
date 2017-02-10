@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 21. Merge Two Sorted Lists
 - 127. Word Ladder
 - 139. Word Break
 - 266. Palindrome Permutation
