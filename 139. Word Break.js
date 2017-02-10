@@ -15,3 +15,55 @@ Hide Company Tags Google Uber Facebook Amazon Yahoo Bloomberg Pocket Gems
 Hide Tags Dynamic Programming
 Hide Similar Problems (H) Word Break II
 
+/**
+ * @param {string} s
+ * @param {string[]} wordDict
+ * @return {boolean}
+ */
+// dp
+// O(N * L * L + M) L: s.length, M = numbers of words in the dict
+var wordBreak = function(s, wordDict) {
+    if (wordDict === null || wordDict.size === 0) {
+        return false;
+    }
+    
+    var possible = [];
+    possible[0] = true;
+    
+    for (var i = 0; i < s.length; i++) {
+    	// possible[i]===true表示前面是一个词了，才会进来 不然不进来
+        if (possible[i]) {
+            // j 从 i之后再开始，不从1开始！！
+            for (var j = i + 1; j <= s.length; j++) {
+                var subStr = s.substring(i, j);
+                if (wordDict.indexOf(subStr) !== -1) {
+                    possible[j] = true;
+                }
+            }
+        }
+    }
+    return possible[s.length] === true;
+};
+
+// var wordBreak = function(s, wordDict) {
+//     if(wordDict === null || wordDict.size === 0) {
+//         return false;
+//     }
+  
+//     var possible = [];
+//     possible[0] = true;
+    
+//     for(var i = 0; i < s.length; i++) {
+//         if(possible[i]) {
+//             for(var j = i + 1; j <= s.length; j++) {
+//                 var str = s.substring(i, j);
+//                 if(wordDict.indexOf(str) !== -1) {
+//                     possible[j] = true;
+//                 }
+//             }
+//         }
+//     }
+    
+//     return possible[s.length] === true;
+// };
+
