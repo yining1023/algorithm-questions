@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 148. Sort List
 - 141. Linked List Cycle
 - 21. Merge Two Sorted Lists
 - 127. Word Ladder
