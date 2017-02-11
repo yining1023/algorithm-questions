@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 388. Longest Absolute File Path
 - Sort Colors
 - Partition Array
 - 167. Two Sum II - Input array is sorted
