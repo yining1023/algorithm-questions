@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 167. Two Sum II - Input array is sorted
 - Two Sum Closest
 - Two Sum VII - Difference equals to target
 - 170. Two Sum III - Data structure design
