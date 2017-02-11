@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- Partition Array
 - 167. Two Sum II - Input array is sorted
 - Two Sum Closest
 - Two Sum VII - Difference equals to target
