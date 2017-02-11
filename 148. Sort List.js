@@ -31,6 +31,7 @@ var sortList = function(head) {
     let middle = findMiddle(head);
     // divide and conquer
     let right = sortList(middle.next);
+    // 一定要断开！
     middle.next = null;
     let left = sortList(head);
     
