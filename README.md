@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 482. License Key Formatting
 - 388. Longest Absolute File Path
 - Sort Colors
 - Partition Array
