@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 281. Zigzag Iterator
 - 418. Sentence Screen Fitting
 - 308. Range Sum Query 2D - Mutable
 - 159. Longest Substring with At Most Two Distinct Characters
