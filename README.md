@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 346. Moving Average from Data Stream
 - 361. Bomb Enemy
 - 281. Zigzag Iterator
 - 418. Sentence Screen Fitting
