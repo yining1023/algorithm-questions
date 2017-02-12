@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 66. Plus One
 - 394. Decode String
 - 163. Missing Ranges
 - 346. Moving Average from Data Stream
