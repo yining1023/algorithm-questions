@@ -2,6 +2,8 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 16. 3Sum Closest
+- 15. 3Sum
 - Sort Colors II
 - 75. Sort Colors
 - 103. Binary Tree Zigzag Level Order Traversal
