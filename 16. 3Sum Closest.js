@@ -16,10 +16,10 @@ Hide Similar Problems (M) 3Sum (M) 3Sum Smaller
  */
 // sort, for 一遍，对每个数，把后面的剩下的数做two pointers，找b+c=-a!!!
 // there might be duplicates!!!
-// 记下closest，diff < closest, update closest and result = current sum.
+// have a bestSum, 记下sum, if abs(sum - target) < abs(bestSum - target), update bestsum
 var threeSumClosest = function(nums, target) {
     if (nums === null || nums.length < 3) {
-        return null;
+        return -1;
     }
     
     // sort first
@@ -27,9 +27,7 @@ var threeSumClosest = function(nums, target) {
         return a - b;
     });
     
-    // i only needs to go to nums.length - 3
-    let closest = Infinity;
-    let result;
+    let bestSum = sortedNums[0] + sortedNums[1] + sortedNums[2];
 
     for (let i = 0; i < sortedNums.length - 2; i++) {
         // skip duplicate triples with the same first numebr
@@ -42,27 +40,21 @@ var threeSumClosest = function(nums, target) {
         // two pointers
         while (left < right) {
             let sum = sortedNums[i] + sortedNums[left] + sortedNums[right];
-            let diff = Infinity;
+            // it's (sum - target), not (sum, target), do subtraction yourself first!!
+            if (Math.abs(sum - target) < Math.abs(bestSum - target)) {
+                bestSum = sum;
+            }
             if (sum === target) {
-                closest = 0;
-                result = sum;
-                return result; 
+                return sum;
             } else if (sum < target) {
-                diff = target - sum;
                 left++;
             } else {
-                diff = sum - target;
                 right--;
-            }
-            if (diff < closest) {
-                closest = diff;
-                console.log(closest);
-                result = sum;
             }
         }
 
     }
-    return result;
+    return bestSum;
 };
 
 // var threeSumClosest = function(nums, target) {
