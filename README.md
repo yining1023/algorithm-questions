@@ -2,6 +2,9 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 215. Kth Largest Element in an Array
+- Kth Largest Element II
+- K Closest Points
 - High Five
 - 364. Nested List Weight Sum II
 - 339. Nested List Weight Sum

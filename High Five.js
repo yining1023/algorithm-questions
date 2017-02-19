@@ -22,6 +22,9 @@ Medium Top k Largest Numbers
  *     }
  * }
  */
+// having a max heap to hold the top 5 largest score
+// how to add one more to it, find the smallest one, 
+// if the new score > the smallest score, replace it
 public class Solution {
     /**
      * @param results a list of <student_id, score>
@@ -40,6 +43,7 @@ public class Solution {
                 hash.get(r.id).add(r.score);
             } else {
             // find the smallest score in the 5 score and replace it with r.score
+            // if r.score > the smallest score
                 int index = 0;
                 for (int i = 1; i < 5; i++) {
                     if (hash.get(r.id).get(i) < hash.get(r.id).get(index)) {
