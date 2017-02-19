@@ -71,3 +71,37 @@ function helper(nestedList, depth) {
     return sum;
 }
 
+// non-recursion, bfs
+var depthSum = function(nestedList) {
+    if (nestedList === null || nestedList.length === 0) {
+        return 0;
+    }
+    
+    let queue = [];
+    let sum = 0;
+    nestedList.forEach(function(list) {
+        queue.push(list);
+    });
+    
+    let depth = 0;
+    while (queue.length > 0) {
+        let size = queue.length;
+        // depth++ at this level
+        depth++;
+        for (let i = 0; i < size; i++) {
+            let nestedInt = queue.shift();
+            if (nestedInt.isInteger()) {
+                // * depth!!!!
+                sum += nestedInt.getInteger() * depth;
+            } else {
+                // if it's a list, loop throught it, push each element in, not push the whole array
+                // need to peel it one level down! otherwise, when it's shift(), nothing will change
+                let newList = nestedInt.getList();
+                for (let j = 0; j < newList.length; j++) {
+                    queue.push(newList[j]);
+                }
+            }
+        }
+    }
+    return sum;
+};
