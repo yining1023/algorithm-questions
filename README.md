@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 339. Nested List Weight Sum
 - 287. Find the Duplicate Number
 - Remove Duplicate Numbers in Array
 - 16. 3Sum Closest
