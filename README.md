@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- High Five
 - 364. Nested List Weight Sum II
 - 339. Nested List Weight Sum
 - 287. Find the Duplicate Number
