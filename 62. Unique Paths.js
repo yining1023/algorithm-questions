@@ -21,7 +21,13 @@
  * @return {number}
  */
  
-// 小学奥数题吗？
+/**
+ * @param {number} m
+ * @param {number} n
+ * @return {number}
+ */
+ 
+// 小学奥数题吗？DP
 // the trick is that puttig numbers in each square to represent if the end is in that square, how many paths are there
 // having a 2d matrix, row[0] and col[0], there will only be 1 path to the end
 // for the rest of squares, the number of path is the sum of top and left
@@ -29,24 +35,45 @@
 //       1, 2, 3, 4,
 //       1, 3, 6, 10
 var uniquePaths = function(m, n) {
-    if (m === null || n === null || m === 0 || n === 0) {
+    if (m <= 0 || n <= 0) {
         return 0;
     }
-    var matrix = [[1]];
     
-    for (var i = 1; i < m; i++) {
+    let matrix = [];
+    for (let i = 0; i < m; i++) {
         matrix.push([1]);
     }
-    
-    for (var j = 1; j < n; j++) {
+    for (let j = 1; j < n; j++) {
         matrix[0].push(1);
     }
     
-    for (var p = 1; p < m; p++) {
-        for (var q = 1; q < n; q++) {
-            matrix[p][q] = matrix[p][q - 1] + matrix[p - 1][q];
-        } 
+    for (let i = 1; i < m; i++) {
+        for (let j = 1; j < n; j++) {
+            matrix[i][j] = matrix[i][j - 1] + matrix[i - 1][j];
+        }
     }
-    
     return matrix[m - 1][n - 1];
 };
+
+// var uniquePaths = function(m, n) {
+//     if (m === null || n === null || m === 0 || n === 0) {
+//         return 0;
+//     }
+//     var matrix = [[1]];
+    
+//     for (var i = 1; i < m; i++) {
+//         matrix.push([1]);
+//     }
+    
+//     for (var j = 1; j < n; j++) {
+//         matrix[0].push(1);
+//     }
+    
+//     for (var p = 1; p < m; p++) {
+//         for (var q = 1; q < n; q++) {
+//             matrix[p][q] = matrix[p][q - 1] + matrix[p - 1][q];
+//         } 
+//     }
+    
+//     return matrix[m - 1][n - 1];
+// };
