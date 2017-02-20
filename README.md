@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 263. Ugly Number
 - 23. Merge k Sorted Lists
 - Rehashing
 - 341. Flatten Nested List Iterator
