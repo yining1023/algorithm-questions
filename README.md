@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 341. Flatten Nested List Iterator
 - Top k Largest Numbers
 - 232. Implement Queue using Stacks
 - 215. Kth Largest Element in an Array
