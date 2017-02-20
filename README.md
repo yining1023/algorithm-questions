@@ -2,6 +2,8 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 23. Merge k Sorted Lists
+- Rehashing
 - 341. Flatten Nested List Iterator
 - Top k Largest Numbers
 - 232. Implement Queue using Stacks
