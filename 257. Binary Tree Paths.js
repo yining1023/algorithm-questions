@@ -30,10 +30,9 @@
  * @param {TreeNode} root
  * @return {string[]}
  */
- 
-var results;
+// traverse, dfs!!! 和dfs 找到所有叶子结点，subset是一样的，只是换成了string
 var binaryTreePaths = function(root) {
-    results = [];
+    var results = [];
     
     if (root === null) {
         return results;
@@ -41,31 +40,32 @@ var binaryTreePaths = function(root) {
     
     // path is not an array, just a string
     var path = JSON.stringify(root.val);
-    helper(root, path);
+    helper(root, path, results);
 
     return results;
 };
 
-function helper(root, path) {
+function helper(root, path, results) {
     // leaf
     if (root.left === null && root.right === null) {
-        results.push(path.slice());
+        results.push(path.slice());// deep copy
         return;
     }
     
     // go to left
     if (root.left !== null) {
+        // push, helper, pop
         path = path + '->' + JSON.stringify(root.left.val);
-        helper(root.left, path);
+        helper(root.left, path, results);
         var tempL = path.split('->');
-        // to get ride of the last -> number!
+        // to get ride of the last -> number!, split, 再join回去
         path = tempL.slice(0, tempL.length - 1).join("->");
     }
     
     // go to right
     if (root.right !== null) {
         path = path + '->' + JSON.stringify(root.right.val);
-        helper(root.right, path);
+        helper(root.right, path, results);
         var tempR = path.split('->');
         path = tempR.slice(0, tempR.length - 1).join("->");
     }

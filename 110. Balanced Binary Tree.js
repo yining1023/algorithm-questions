@@ -43,6 +43,8 @@ function findDepth(root) {
     return Math.max(leftDepth, rightDepth, 0) + 1;
 }
 
+
+// second time
 var isBalanced = function(root) {
     if (root === null) {
         return true;
