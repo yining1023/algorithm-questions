@@ -46,6 +46,21 @@
 // 1. bfs get all nodes
 // 2. copy nodes and store the old->new mapping information in a hash map
 // 3. copy edges/neighbors
+// /**
+//  * Definition for undirected graph.
+//  * function UndirectedGraphNode(label) {
+//  *     this.label = label;
+//  *     this.neighbors = [];   // Array of UndirectedGraphNode
+//  * }
+//  */
+
+// /**
+//  * @param {UndirectedGraphNode} graph
+//  * @return {UndirectedGraphNode}
+//  */
+// 1. bfs get all nodes
+// 2. copy nodes and store the old->new mapping information in a hash map
+// 3. copy edges/neighbors
 var cloneGraph = function(graph) {
     if (graph === null) {
         return graph;
@@ -62,7 +77,7 @@ var cloneGraph = function(graph) {
         hash[nodes[i].label] = newNode;
     }
     
-    // copy edges/neighbors
+    // 3. copy edges/neighbors
     for (let j = 0; j < nodes.length; j++) {
         newNode = hash[nodes[j].label];
         for (let n = 0; n < nodes[j].neighbors.length; n++) {
@@ -83,19 +98,39 @@ function getNodes(graph) {
 
     queue.push(graph);
     visited.set(graph);
-    nodes.push(graph);
     
     while (queue.length > 0) {
         let head = queue.shift();
-
+        nodes.push(head);
         for (let m = 0; m < head.neighbors.length; m++) {
             // 要使用node.label来当visited的key
             if (visited.has(head.neighbors[m]) !== true) {
                 queue.push(head.neighbors[m]);
                 visited.set(head.neighbors[m]);
-                nodes.push(head.neighbors[m]);
             }
         }
     }
-    return nodes
+    return nodes;
 }
+
+// other method
+// var cloneGraph = function(graph) {
+//     if(!graph) {
+//         return graph;
+//     } else {
+//         return dfs(graph, {});
+//     }
+    
+//     function dfs(node, visited) {
+//         var newNode = visited[node.label] = visited[node.label] || new UndirectedGraphNode(node.label);
+        
+//         for(var i = 0; i < node.neighbors.length; i++) {
+//             var neighbor = node.neighbors[i];
+//             newNode.neighbors[i] = visited[neighbor.label] = visited[neighbor.label] || dfs(neighbor, visited);
+//         }
+        
+//         return newNode;
+//     }
+    
+// };
+
