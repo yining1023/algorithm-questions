@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 345. Reverse Vowels of a String
 - 344. Reverse String
 - 415. Add Strings
 - 14. Longest Common Prefix
