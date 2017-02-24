@@ -20,7 +20,8 @@
 /**
  * @param {character[][]} grid
  * @return {number}
- */
+ */ 
+// dfs: O(T) = O(mn), 答案个数 乘以 构造每个答案的时间，答案个数最多为mn／2，时间为4
 // dfs could be stack overflow so, bfs is better
 // bfs
 // bfs is not recursion!!
@@ -76,36 +77,36 @@ function bfsHelper(grid, i, j, m, n) {
     }
  
 // dfs
-// var numIslands = function(grid) {
-//     if (grid === null || grid.length === 0 || grid[0].length === 0) {
-//         return 0;
-//     }
+var numIslands = function(grid) {
+    if (grid === null || grid.length === 0 || grid[0].length === 0) {
+        return 0;
+    }
 
-//     let count = 0;
-//     for (let i = 0; i < grid.length; i++) {
-//         for (let j = 0; j < grid[0].length; j++) {
-//             if (grid[i][j] === '1') {
-//                 count++;
-//                 dfsHelper(grid, i, j);
-//             }
-//         }
-//     }
-//     return count;
-// };
+    let count = 0;
+    for (let i = 0; i < grid.length; i++) {
+        for (let j = 0; j < grid[0].length; j++) {
+            if (grid[i][j] === '1') {
+                count++;
+                dfsHelper(grid, i, j);
+            }
+        }
+    }
+    return count;
+};
 
-// dfsHelper = function(grid, i, j) {
-//     let m = grid.length, n = grid[0].length;
-//     if (i < 0 || i >= m || j < 0 || j >= n) {
-//         return;
-//     }
-//     if (grid[i][j] === '1') {
-//         grid[i][j] = '0';
-//         dfsHelper(grid, i + 1, j);
-//         dfsHelper(grid, i - 1, j);
-//         dfsHelper(grid, i, j + 1);
-//         dfsHelper(grid, i, j - 1);
-//     }
-// }
+dfsHelper = function(grid, i, j) {
+    let m = grid.length, n = grid[0].length;
+    if (i < 0 || i >= m || j < 0 || j >= n) {
+        return;
+    }
+    if (grid[i][j] === '1') {
+        grid[i][j] = '0';
+        dfsHelper(grid, i + 1, j);
+        dfsHelper(grid, i - 1, j);
+        dfsHelper(grid, i, j + 1);
+        dfsHelper(grid, i, j - 1);
+    }
+}
 
 // BFS
 // var numIslands = function(grid) {
