@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 415. Add Strings
 - 14. Longest Common Prefix
 - 305. Number of Islands II
 - 142. Linked List Cycle II
