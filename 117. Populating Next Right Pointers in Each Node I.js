@@ -24,9 +24,9 @@
 // Hide Tags Tree Depth-first Search
 // Hide Similar Problems (M) Populating Next Right Pointers in Each Node
 
-// 不同于上一题，这题的二叉树并不是完全二叉树，
-// 我们不光需要提供first指针用来表示一层的第一个元素，
-// 同时也需要使用另一个lst指针表示该层上一次遍历的元素。那么我们只需要处理好如何设置last的next指针就可以了。
+不同于上一题，这题的二叉树并不是完全二叉树，
+我们不光需要提供first指针用来表示一层的第一个元素，
+同时也需要使用另一个lst指针表示该层上一次遍历的元素。那么我们只需要处理好如何设置last的next指针就可以了。
 
 // /**
 //  * Definition for binary tree with next pointer.

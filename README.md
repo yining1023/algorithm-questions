@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 200. Number of Islands
 - 142. Linked List Cycle II
 - 264. Ugly Number II
 - 263. Ugly Number

@@ -16,6 +16,8 @@
  * @param {number[]} height
  * @return {number}
  */
+// two pointers!!!
+// 从两边向中间灌水
 var trap = function(height) {
     if (height === null || height.length === 0) {
         return 0;

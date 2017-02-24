@@ -36,14 +36,15 @@
 // Hide Tags Tree Depth-first Search
 // Hide Similar Problems (M) Populating Next Right Pointers in Each Node II (M) Binary Tree Right Side View
 
-// 思路：
+思路：
 
-// 能解II的算法必然能解I，所以这里只讨论II的解。
+能解II的算法必然能解I，所以这里只讨论II的解。
 
-// 递推：在第i层的所有next pointer都连接好的情况下，如何连接第i+1层的next pointer?
-// 显然从第i层的最左节点开始依次通过next pointer遍历这一层，同时将他们的children，即第i+1层的节点依次通过next pointer连接起来。连接的时候要分情况处理。
+递推：在第i层的所有next pointer都连接好的情况下，如何连接第i+1层的next pointer?
+显然从第i层的最左节点开始依次通过next pointer遍历这一层，
+同时将他们的children，即第i+1层的节点依次通过next pointer连接起来。连接的时候要分情况处理。
 
-// 初始情况：对于顶层，只有一个节点root，所以该层连接已经完成。
+初始情况：对于顶层，只有一个节点root，所以该层连接已经完成。
 
 /**
  * Definition for binary tree with next pointer.
