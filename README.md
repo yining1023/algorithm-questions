@@ -1,6 +1,8 @@
 # algorithm-questions
 
 Answers for algorithm-questions from Leetcode in Javascript.
+
+- 293. Flip Game
 - 359. Logger Rate Limiter
 - 247. Strobogrammatic Number II
 - 246. Strobogrammatic Number
