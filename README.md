@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 247. Strobogrammatic Number II
 - 246. Strobogrammatic Number
 - 345. Reverse Vowels of a String
 - 344. Reverse String
