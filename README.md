@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 276. Paint Fence
 - 401. Binary Watch
 - 389. Find the Difference
 - 294. Flip Game II
