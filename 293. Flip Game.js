@@ -29,10 +29,11 @@ var generatePossibleNextMoves = function(s) {
     }
     for (let i = 0; i < s.length - 1; i++) {
         if (s.charAt(i) === '+' && s.charAt(i + 1) === '+') {
-            let temp = s.substring(0, i) + '--' + s.substring(i + 2, s.length);
+            let temp = s.substring(0, i) + '--' + s.substring(i + 2);// substring, if the end is s.length, you can omit it
             results.push(temp); // no need for deep copy
         }
     }
     return results;
 };
 // can also convert string to array first
+
