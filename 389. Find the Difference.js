@@ -26,8 +26,25 @@ Hide Similar Problems (E) Single Number
  * @param {string} t
  * @return {character}
  */
-// O(m + n)
-// corner case: "a","aa" return 'a', map[a] = 1, -> 0 -> -1
+// 1. hash map
+// 2. char code
+
+// char code
+// O(max(m, n)) => O(n)
+// String.fromCharCode(10)
+// "a".charCodeAt(0);
+var findTheDifference = function(s, t) {
+    let charCode = t.charCodeAt(t.length - 1);
+    for (let i = 0; i < s.length; i++) {
+        charCode -= s.charCodeAt(i);
+        charCode += t.charCodeAt(i);// +t -s
+    }
+    return String.fromCharCode(charCode);
+};
+
+
+// O(m + n), m = n + 1, so...O(n)
+// corner case, duplcates!!: "a","aa" return 'a', map[a] = 1, -> 0 -> -1
 var findTheDifference = function(s, t) {
     if (s === null || t === null || t.length === 0) {
         return '';
