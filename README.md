@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 401. Binary Watch
 - 389. Find the Difference
 - 294. Flip Game II
 - 293. Flip Game
