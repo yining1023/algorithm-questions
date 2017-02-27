@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 400. Nth Digit
 - 276. Paint Fence
 - 401. Binary Watch
 - 389. Find the Difference
