@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 268. Missing Number
 - 400. Nth Digit
 - 276. Paint Fence
 - 401. Binary Watch

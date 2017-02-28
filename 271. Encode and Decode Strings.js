@@ -78,3 +78,32 @@ var decode = function(s) {
  * Your functions will be called as such:
  * decode(encode(strs));
  */
+
+
+/* Mock Interview */
+var encode = function(strings) {
+  let seperator = '/';
+  for (let i = 0; i < strings.length - 1; i++) {
+    encodedStr += strings[i].length + seperator + strings[i];
+  }
+  encodedStr += strings[strings.length - 1];
+  return encodedStr;
+}
+
+var decode = function(encodedStr) {
+  let results = [];
+  let i = 0, leng = 0;
+  while (i < encodedStr.length) {
+    if (encodedStr[i] === '/') {
+      results.push(encodedStr.substr(i + 1, leng));
+      i += leng;
+      leng = 0;
+    } else {
+      leng = leng * 10 + encodedStr[i];
+    }
+    i++;
+  }
+  return results;
+}
+
+// 10/aaaaabbbbb 50/def, 11

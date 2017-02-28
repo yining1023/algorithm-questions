@@ -47,4 +47,39 @@ MovingAverage.prototype.next = function(val) {
  * var obj = Object.create(MovingAverage).createNew(size)
  * var param_1 = obj.next(val)
  */
+
+
+/* Mock Interview */
+
+class Average {
+  constructor(size) {
+    this.size = size;
+    this.queue = [];
+    this.sum = 0;
+  }
+}
+
+Average.prototype.add = function(newNum) {
+  if (this.size <= 0 || !newNum) {
+    return null;
+  }
+
+  if (this.queue.length === this.size) {
+    this.sum -= this.queue.shift();
+  }
+
+  this.queue.push(newNum);
+  this.sum += newNum;
+  // for (let i = 0; i < this.queue.length; i++) {
+  //   sum += this.queue[i];
+  // }
+  return this.sum / this.queue.length;
+}
+
+// test
+let test = new Average(3);
+test.add(1);
+test.add(2);
+test.add(3);
+test.add(4);
  
