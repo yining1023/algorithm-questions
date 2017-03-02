@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 459. Repeated Substring Pattern
 - 408. Valid Word Abbreviation
 - 231. Power of Two
 - 422. Valid Word Square
