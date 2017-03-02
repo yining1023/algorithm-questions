@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 408. Valid Word Abbreviation
 - 231. Power of Two
 - 422. Valid Word Square
 - 409. Longest Palindrome
