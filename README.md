@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 374. Guess Number Higher or Lower
 - 459. Repeated Substring Pattern
 - 408. Valid Word Abbreviation
 - 231. Power of Two
