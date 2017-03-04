@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 485. Max Consecutive Ones
 - 326. Power of Three
 - 374. Guess Number Higher or Lower
 - 459. Repeated Substring Pattern
