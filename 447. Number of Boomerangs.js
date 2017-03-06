@@ -50,4 +50,3 @@ function getDistance(num1, num2) {
     
     return dx * dx + dy * dy;
 }
-
