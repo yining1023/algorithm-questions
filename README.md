@@ -2,6 +2,8 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 501. Find Mode in Binary Search Tree
+- 530. Minimum Absolute Difference in BST
 - 475. Heaters
 - 448. Find All Numbers Disappeared in an Array
 - 447. Number of Boomerangs
