@@ -17,6 +17,7 @@ Hide Similar Problems (E) Reverse String
  * @return {string}
  */
 // O(n/2k * k) => O(n)
+// worst case, k = 1, O(n / 2)
 var reverseStr = function(s, k) {
     s = s.split("");
     let m = 0, len = s.length;

@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 520. Detect Capital
 - 541. Reverse String II
 - 501. Find Mode in Binary Search Tree
 - 530. Minimum Absolute Difference in BST
