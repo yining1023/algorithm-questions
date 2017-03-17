@@ -16,19 +16,19 @@ c) i|nternationalizatio|n  --> i18n
 d) l|ocalizatio|n          --> l10n
 Assume you have a dictionary and given a word, find whether its abbreviation is unique in the dictionary. A word's abbreviation is unique if no other word from the dictionary has the same abbreviation.
 
-Example: 
+Example:
 Given dictionary = [ "deer", "door", "cake", "card" ]
 
-isUnique("dear") -> 
+isUnique("dear") ->
 false
 
-isUnique("cart") -> 
+isUnique("cart") ->
 true
 
-isUnique("cane") -> 
+isUnique("cane") ->
 false
 
-isUnique("make") -> 
+isUnique("make") ->
 true
 
 Hide Company Tags Google
@@ -43,42 +43,52 @@ Hide Similar Problems (E) Two Sum III - Data structure design (M) Generalized Ab
 /**
  * @param {string[]} dictionary
  */
+// O(n) time ValidWordAbbr, O(1) time for isUnique
+// map key: "c2k" => value: "cake"
 var ValidWordAbbr = function(dictionary) {
-    this.map = {};
-    for (let i = 0; i < dictionary.length; i++) {
-        let d = dictionary[i];
-        let n = d.length;
-        let abbr = d[0] + JSON.stringify(n - 2) + d[n - 1];
-        if (this.map[abbr] === undefined) {
-            this.map[abbr] = [];
-            this.map[abbr].push(d);
+    this.map = new Map();
+    dictionary.forEach((dic) => {
+        let key = this.getKey(dic);
+        if (this.map.has(key)) {
+            // already has it, and its !== the word, then it's not unique, then put it as "", cannot delete it.
+            // if delete it, no keys, will think it's new abbr, unique. ["dear", "deer"] isUnique("door") => true
+            if (this.map.get(key) !== dic) {// if dic = ["a", "a"], "a".isUnique() => TRUE! so check if === first,
+                this.map.set(key, "");
+            }
+        } else {
+            this.map.set(key, dic);// ["dear"] isUnique("door") => false. save the word
         }
-    }
+    });
 };
 
-/** 
+/**
  * @param {string} word
  * @return {boolean}
  */
+ValidWordAbbr.prototype.getKey = function(word) {
+    // corner case "a" => "a", "ab" => "ab"
+    let n = word.length;
+    if (n <= 2) return word;
+    let key = word[0] + JSON.stringify(n - 2) + word[n - 1]; // n - 1 is the last char
+    return key;
+};
+
 
 ValidWordAbbr.prototype.isUnique = function(word) {
-    let n = word.length;
-    let abbr = word[0] + JSON.stringify(n - 2) + word[n - 1];
-    // 也有可能这个数自己在dict里面，这时候也是unique的
-    // 那么map里面的【】就必须全是word才行
-    if (this.map[abbr] !== undefined) {
-        var count = 0;
-        for (var i = 0; i < this.map[abbr].length; ++i) {
-            if (this.map[abbr][i] == word)
-            count++;
-        }
+    // generate the key first!
+    let wordKey = this.getKey(word);
+    // no need to use map.forEach here, just check if it has this key or not
+    if (this.map.has(wordKey)) {// ["dear"] isUnique("dear") => true.也有可能这个数自己在dict里面，这时候也是unique的
+        if (word === this.map.get(wordKey))
+            return true;
+        else
+            return false;
     }
-    return this.map[abbr] === undefined || count === this.map[abbr].length;
+    return true;// if after looping through all keys in the map, there is no key matches, means it's a new abbr!
 }
 
-/** 
+/**
  * Your ValidWordAbbr object will be instantiated and called as such:
  * var obj = Object.create(ValidWordAbbr).createNew(dictionary)
  * var param_1 = obj.isUnique(word)
  */
- 
