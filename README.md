@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 351. Android Unlock Patterns
 - 506. Relative Ranks
 - 520. Detect Capital
 - 541. Reverse String II
