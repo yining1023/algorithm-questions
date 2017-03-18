@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 259. 3Sum Smaller
 - 324. Wiggle Sort II
 - 280. Wiggle Sort
 - 351. Android Unlock Patterns

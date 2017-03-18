@@ -19,7 +19,7 @@ Hide Similar Problems (E) Two Sum (M) 3Sum Closest (M) 4Sum (M) 3Sum Smaller
  * @param {number[]} nums
  * @return {number[][]}
  */
- 
+// O(n^2) time
 // sort, for 一遍，对每个数，把后面的剩下的数做two pointers，找b+c=-a!!!
 // there might be duplicates!!!
 var threeSum = function(nums) {
@@ -27,12 +27,12 @@ var threeSum = function(nums) {
     if (nums === null || nums.length < 3) {
         return results;
     }
-    
+
     // sort first
     let sortedNums = nums.sort((a, b) => {
         return a - b;
     });
-    
+
     // i only needs to go to nums.length - 3
     for (let i = 0; i < sortedNums.length - 2; i++) {
         // skip duplicate triples with the same first numebr
@@ -74,23 +74,23 @@ function twoSum(sortedNums, left, right, target, results) {
 
 // var threeSum = function(nums) {
 //     var result = [];
-    
+
 //     if(nums.length < 3){
 //         return result;
 //     }
 //     // sort!!!!
 //     nums.sort(function(a,b){return a>b ? 1 : -1;});
-    
+
 //     var len = nums.length;
-    
+
 //     for(var i = 0; i < len-2; i++){
-        
+
 //         if(i === 0 || nums[i] > nums[i-1]){ // very important, same as line 40, remove duplicate as 111 will only run once 1-> rather than 1 1 1
 //             target = 0 - nums[i];
-            
+
 //             j = i + 1;
 //             k = len - 1;
-            
+
 //             while(j < k){
 //                 if(nums[j] + nums[k] === target){
 //                     result.push([nums[i],nums[j],nums[k]]);
@@ -106,11 +106,11 @@ function twoSum(sortedNums, left, right, target, results) {
 //             }
 //         }
 //         // very important, same as line 19
-//         if(i < len - 1){ 
+//         if(i < len - 1){
 //             while(nums[i] === nums[i+1]){i++;}
 //         }
 //     }
-    
+
 //     return result;
 // };
 
