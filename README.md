@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 280. Wiggle Sort
 - 351. Android Unlock Patterns
 - 506. Relative Ranks
 - 520. Detect Capital
