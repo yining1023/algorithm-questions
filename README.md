@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 406. Queue Reconstruction by Height
 - 289. Game of Life
 - 259. 3Sum Smaller
 - 324. Wiggle Sort II
