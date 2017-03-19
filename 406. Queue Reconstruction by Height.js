@@ -20,6 +20,7 @@ Hide Similar Problems (H) Count of Smaller Numbers After Self
  * @param {number[][]} people
  * @return {number[][]}
  */
+// O(nlogn)?
 // Pick out tallest group of people and sort them in a subarray (S). Since there's no other groups of people taller than them, therefore each guy's index will be just as same as his k value.
 // For 2nd tallest group (and the rest), insert each one of them into (S) by k value. So on and so forth.
 // E.g.
