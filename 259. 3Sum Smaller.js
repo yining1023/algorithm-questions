@@ -35,6 +35,8 @@ var threeSumSmaller = function(nums, target) {
         twoSumSmaller(i + 1, nums.length - 1, target - nums[i]);
     }
 
+    return results;
+
     function twoSumSmaller(start, end, target) {
         while (start < end) {
             if (nums[start] + nums[end] >= target) end--;
@@ -47,9 +49,6 @@ var threeSumSmaller = function(nums, target) {
             }
         }
     }
-
-    return results;
 };
 
 // to be safe, put all sub function into the bigger function
-
