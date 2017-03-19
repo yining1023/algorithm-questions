@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 494. Target Sum
 - 279. Perfect Squares
 - 406. Queue Reconstruction by Height
 - 289. Game of Life
