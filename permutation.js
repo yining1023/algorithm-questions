@@ -29,7 +29,7 @@ var permute = function(nums) {
     if (nums === null || nums.length === 0) {
         return results;
     }
-    
+
     dfsHelper([], nums, results);
     return results;
 }
@@ -40,7 +40,7 @@ function dfsHelper(permutation, nums, results) {
         results.push(permutation.slice());
         return; // return!!
     }
-    
+
     for (let i = 0; i < nums.length; i++) {
         // use indexOf to check if this number is in the array or not
         if (permutation.indexOf(nums[i]) === -1) {
@@ -52,16 +52,16 @@ function dfsHelper(permutation, nums, results) {
 }
 
 
-// 2
+// the second time
 var permute = function(nums) {
     var results = [];
-    
+
     if (nums === null || nums.length === 0) {
         return results;
     }
-    
+
     permuteHelper(results, [], nums);
-    
+
     return results;
 };
 
@@ -74,7 +74,7 @@ function permuteHelper(results, subset, nums) {
             subset.pop();
         }
     }
-    
+
     // got one result
     if (subset.length === nums.length) {
         results.push(subset.slice());

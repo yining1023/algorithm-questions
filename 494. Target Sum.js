@@ -61,3 +61,50 @@ var findTargetSumWays = function(nums, S) {
         return add + minus;
     }
 };
+// this dfs has no subset.push()....dfs(..) subset.pop(), because no need to keep track of the subset, only care about the index
+
+
+
+
+// O(ns) time, iterative DP solution using subset sum
+// The unsigned right shift operator ">>>" shifts a zero into the leftmost position
+// The recursive solution is very slow, because its runtime is exponential
+
+// The original problem statement is equivalent to:
+// Find a subset of nums that need to be positive, and the rest of them negative, such that the sum is equal to target
+
+// Let P be the positive subset and N be the negative subset
+// For example:
+// Given nums = [1, 2, 3, 4, 5] and target = 3 then one possible solution is +1-2+3-4+5 = 3
+// Here positive subset is P = [1, 3, 5] and negative subset is N = [2, 4]
+
+// Then let's see how this can be converted to a subset sum problem:
+
+//                   sum(P) - sum(N) = target
+// sum(P) + sum(N) + sum(P) - sum(N) = target + sum(P) + sum(N)
+//                       2 * sum(P) = target + sum(nums)
+// So the original problem has been converted to a subset sum problem as follows:
+// Find a subset P of nums such that sum(P) = (target + sum(nums)) / 2
+
+// Note that the above formula has proved that target + sum(nums) must be even
+// We can use that fact to quickly identify inputs that do not have a solution (Thanks to @BrunoDeNadaiSarnaglia for the suggestion)
+// For detailed explanation on how to solve subset sum problem, you may refer to Partition Equal Subset Sum
+var findTargetSumWays = function(nums, S) {
+    var sum = 0;
+    nums.forEach(n => { sum += n; });
+
+    if (S > sum || (S + sum) % 2 !== 0) return 0;
+    // goal: find a subset that sum = (target + total sum) / 2
+    return subSet(nums, (S + sum) / 2);
+
+    function subSet(nums, target) {
+        let dp = new Array(target + 1).fill(0);//length is target + 1, not nums.length + 1
+        dp[0] = 1;
+        for (let i = 0; i < nums.length; i++) {
+            for (let j = target; j >= nums[i]; j--) {
+                dp[j] += dp[[j - nums[i]]];// j - nums[i], not target -
+            }
+        }
+        return dp[target];
+    }
+};
