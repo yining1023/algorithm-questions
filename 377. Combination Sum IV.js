@@ -44,18 +44,18 @@ Hide Similar Problems (M) Combination Sum
 // EDIT: The problem says that target is a positive integer that makes me feel it's unclear to put it in the above way. Since target == 0 only happens when in the previous call, target = nums[i], we know that this is the only combination in this case, so we return 1.
 // Now we can come up with at least a recursive solution.
 // but too slow, Time Limit Exceeded
-// var combinationSum4 = function(nums, target) {
-//     if (target === 0) return 1;
+var combinationSum4 = function(nums, target) {
+    if (target === 0) return 1;
 
-//     let results = 0;
-//     for (let i = 0; i < nums.length; i++) {
-//         if (target >= nums[i]) {
-//             results += combinationSum4(nums, target - nums[i]);
-//         }
-//     }
+    let results = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (target >= nums[i]) {
+            results += combinationSum4(nums, target - nums[i]);
+        }
+    }
 
-//     return results;
-// };
+    return results;
+};
 
 // Now for a DP solution, we just need to figure out a way to store the intermediate results, to avoid the same combination sum being calculated many times.
 // We can use an array to save those results, and check if there is already a result before calculation.
