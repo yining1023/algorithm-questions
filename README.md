@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 380. Insert Delete GetRandom O(1)
 - 370. Range Addition
 - 313. Super Ugly Number
 - 377. Combination Sum IV
