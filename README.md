@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 370. Range Addition
 - 313. Super Ugly Number
 - 377. Combination Sum IV
 - 494. Target Sum
