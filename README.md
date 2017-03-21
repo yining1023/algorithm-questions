@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 378. Kth Smallest Element in a Sorted Matrix
 - 399. Evaluate Division
 - 535. Encode and Decode TinyURL
 - 381. Insert Delete GetRandom O(1) - Duplicates allowed
