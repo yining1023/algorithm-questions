@@ -9,7 +9,7 @@ Hide Tags Hash Table Math
 Hide Similar Problems (M) Design TinyURL
 
 // no need to over-complicate things, thinking it's like encode decode strings list to a string
-// building some map relations between longUrl and shortUrl! => hash map
+// building some map relations between longUrl and shortUrl! => hash map, 2 objects, check if the code is taken or not
 
 /**
  * Encodes a URL to a shortened URL.
@@ -94,4 +94,3 @@ var decode = function(shortUrl) {
  * Your functions will be called as such:
  * decode(encode(url));
  */
-
