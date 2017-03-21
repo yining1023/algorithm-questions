@@ -17,14 +17,14 @@ Hide Similar Problems (H) First Missing Positive (E) Single Number (M) Linked Li
 var findDuplicate = function(nums) {
     let start = 0,
         end = nums.length - 1;
-    
+
     // start <= end!!!
     while (start <= end) {
         // don't forget parseInt
         // 找到中间的index
         let mid = parseInt(start + (end - start) / 2);
         let count = 0;
-        
+
         // 计算总数组中有多少个数小于等于中间的index！！不是中间的那个数
         for (let i = 0; i < nums.length; i++) {
             if (nums[i] <= mid) {
@@ -105,11 +105,11 @@ public class Solution {
  */
 var findDuplicate = function(nums) {
     var start = 0, end = nums.length - 1;
-    
+
     while (start <= end) {
         // 找到中间那个数
         var mid = parseInt(start + (end - start) / 2);
-        
+
         // 计算总数组中有多少个数小于等于中间数
         var count = 0;
         for (var i = start; i < end; i++){
@@ -117,7 +117,7 @@ var findDuplicate = function(nums) {
                 count++;
             }
         }
-        
+
         // 如果小于等于中间数的数量大于中间数，说明前半部分必有重复
         if(count > mid){
             end = mid - 1;
@@ -127,4 +127,35 @@ var findDuplicate = function(nums) {
         }
     }
     return start;
+};
+
+// This solution is based on binary search.
+
+// At first the search space is numbers between 1 to n. Each time I select a number mid (which is the one in the middle) and count all the numbers equal to or less than mid. Then if the count is more than mid, the search space will be [1 mid] otherwise [mid+1 n]. I do this until search space is only one number.
+
+// Let's say n=10 and I select mid=5. Then I count all the numbers in the array which are less than equal mid. If the there are more than 5 numbers that are less than 5, then by Pigeonhole Principle (https://en.wikipedia.org/wiki/Pigeonhole_principle) one of them has occurred more than once. So I shrink the search space from [1 10] to [1 5]. Otherwise the duplicate number is in the second half so for the next step the search space would be [6 10].
+
+
+// Solution with O(n) time and O(1) space without modifying the array.
+// O(N) time
+// The main idea is the same with problem Linked List Cycle II,https://leetcode.com/problems/linked-list-cycle-ii/. Use two pointers the fast and the slow. The fast one goes forward two steps each time, while the slow one goes only step each time. They must meet the same item when slow==fast. In fact, they meet in a circle, the duplicate number must be the entry point of the circle when visiting the array from nums[0]. Next we just need to find the entry point. We use a point(we can use the fast one before) to visit form begining with one step each time, do the same job to slow. When fast==slow, they meet at the entry point of the circle. The easy understood code is as follows.
+// same with find the cycle entry
+var findDuplicate = function(nums) {
+    var slow = nums[0],
+        fast = nums[nums[0]];
+
+    while (fast !== slow) {
+        slow = nums[slow];
+        fast = nums[nums[fast]];
+    }
+
+    fast = 0;
+    while(fast !== slow) {
+        slow = nums[slow];
+        fast = nums[fast];
+    }
+    if (fast === slow) {
+        return slow;
+    }
+    return -1;
 };
