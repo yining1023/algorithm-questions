@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 535. Encode and Decode TinyURL
 - 381. Insert Delete GetRandom O(1) - Duplicates allowed
 - 380. Insert Delete GetRandom O(1)
 - 370. Range Addition
