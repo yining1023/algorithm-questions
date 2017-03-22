@@ -41,6 +41,8 @@ Hide Tags Stack
  */
 // binary tree: root only has 0/1/2 children, 0 child: # #;
 
+
+// O(n)
 // Solution1: stack, Time complexity is O(n), space is also O(n) for the stack.
 // using a stack, scan left to right
 // case 1: we see a number, just push it to the stack
@@ -70,7 +72,7 @@ var isValidSerialization = function(preorder) {
 
 // Soluton 2: indegree and outdegree
 // In a binary tree, if we consider null as leaves, then
-
+// O(n)
 // root (2 children) provides 2 outdegree and 0 indegree
 // all non-null node provides 2 outdegree and 1 indegree (2 children and 1 parent), except root
 // all null node provides 0 outdegree and 1 indegree (0 child and 1 parent).
