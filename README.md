@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 94. Binary Tree Inorder Traversal
 - 230. Kth Smallest Element in a BST
 - 331. Verify Preorder Serialization of a Binary Tree
 - 331. Verify Preorder Serialization of a Binary Tree
