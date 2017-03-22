@@ -13,7 +13,7 @@ Hide Similar Problems (E) Sqrt(x) (M) Super Pow
  */
 // example: Pow(x, n) = x^n = 2^7 = 2^3 * 2^3 * 2^1 = 128
 
-
+// Time O(logN)
 // Solution 1: let n become smaller and smaller, small enough to 0 or 1 that we can manually handle it
 // Pow(x, n) = x^n = (x*x)^(n/2) or if n % 2 !== 0, x * (x*x)^(parseInt(n/2))
 // 2^7 = 2*(2*2)^(3) = 2*4*(4*4)^(1) = 16 * 8 = 128

@@ -34,15 +34,43 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
+
+// bfs level order traversal
+// queue, while(queue.length > 0), size = queue.length, for (size), push to results
+var levelOrder = function(root) {
+    let results = [];
+    if (root === null) return results;
+
+    let queue = [];
+    queue.push(root);
+
+    while(queue.length > 0) {
+        let size = queue.length;
+        let tempLevel = [];
+        for (let i = 0; i < size; i++) {
+            let node = queue.shift();
+            tempLevel.push(node.val);
+
+            // remember to push new nodes in in the for loop!!!! not outside of the for loop
+            // whenever shift one node out, push it's left and right into the queue
+            if (node.left !== null) queue.push(node.left);
+            if (node.right !== null) queue.push(node.right);
+        }
+        results.push(tempLevel);
+    }
+
+    return results;
+};
+
 var levelOrder = function(root) {
     let results = [];
     if (root === null) {
         return results;
     }
-    
+
     let queue = [];
     queue.push(root);
-    
+
     while(queue.length > 0) {
         let size = queue.length;
         let level = [];
@@ -59,7 +87,7 @@ var levelOrder = function(root) {
         }
         results.push(level);
     }
-    
+
     return results;
 }
 
@@ -69,30 +97,30 @@ var levelOrder = function(root) {
 //     if (root === null) {
 //         return results;
 //     }
-    
+
 //     var queue = [],
 //         temp = [],
 //         curCount = 1,
 //         nextLevCount = 0;
-        
+
 //     queue.push(root);
-    
+
 //     while (queue.length !== 0) {
 //         var p = queue.shift();
 //         // push p.val not p itself!! p is a treeNode
 //         temp.push(p.val);
 //         curCount--;
-        
+
 //         if (p.left) {
 //             queue.push(p.left);
 //             nextLevCount++;
 //         }
-        
+
 //         if (p.right) {
 //             queue.push(p.right);
 //             nextLevCount++;
 //         }
-        
+
 //         // means the level is over
 //         if (curCount === 0) {
 //             results.push(temp);
@@ -102,6 +130,6 @@ var levelOrder = function(root) {
 //             nextLevCount = 0;
 //         }
 //     }
-    
+
 //     return results;
 // };
