@@ -67,3 +67,22 @@ var isValidSerialization = function(preorder) {
 
     return stack.length === 1 && stack[0] === "#";
 };
+
+// Soluton 2: indegree and outdegree
+// In a binary tree, if we consider null as leaves, then
+
+// root (2 children) provides 2 outdegree and 0 indegree
+// all non-null node provides 2 outdegree and 1 indegree (2 children and 1 parent), except root
+// all null node provides 0 outdegree and 1 indegree (0 child and 1 parent).
+// Suppose we try to build this tree. During building, we record the difference between out degree and in degree diff = outdegree - indegree. When the next node comes, we then decrease diff by 1, because the node provides an in degree. If the node is not null, we increase diff by 2, because it provides two out degrees. If a serialization is correct, diff should never be negative and diff will be zero when finished.
+// edge case: "9, #, #" dif = 2-1-1 = 0
+var isValidSerialization = function(preorder) {
+    var diff = 1;// root should be +2, normal node is +2 -1, # is -1; so at first diff = 1, and treat root as a normal root
+    var strings = preorder.split(",");
+    for (let i = 0; i < strings.length; i++) {
+        diff--;// diff-- first!! every node has to --, example: "#,7,6,9" root is null, false, 1-1-1<0
+        if (diff < 0) return false;// check if < 0
+        if (strings[i] !== "#") diff += 2;// normal node 2 outdegree
+    }
+    return diff === 0;
+};
