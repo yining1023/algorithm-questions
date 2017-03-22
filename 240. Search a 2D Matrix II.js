@@ -24,7 +24,7 @@
  * @param {number} target
  * @return {boolean}
  */
- 
+
 // cannot use binary search anymore, only O (m + n)
 // start from the bottom left corner
 // > target, go up;
@@ -33,20 +33,20 @@ var searchMatrix = function(matrix, target) {
     if (target === null || matrix === null || matrix.length === 0 || matrix[0].length === 0) {
         return false;
     }
-    
+
     var row = matrix.length - 1, // last row
         col = 0;
-    
-    while(row >= 0 && col < matrix[0].length) {
+
+    while(row >= 0 && col < matrix[0].length) {// don't forget the restrction
         var currentNum = matrix[row][col];
-        if (currentNum > target) {
+        if (currentNum > target) {// go up, the uppper one is defninitely smaller than itself
             row--;
-        } else if (currentNum < target) {
+        } else if (currentNum < target) {// go right, the right one is definitely bigger than itself
             col++;
         } else if (currentNum === target) {
             return true;
         }
     }
-    
+
     return false;
 };
