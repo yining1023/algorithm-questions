@@ -46,11 +46,11 @@ BSTIterator.prototype.hasNext = function() {
 BSTIterator.prototype.next = function() {
     if(this.hasNext()) {
         var node = this.stack.pop();
-        
+
         if(node.right) {
             this.pushLeft(node.right);
         }
-        
+
         return node.val;
     }
 };
@@ -61,6 +61,64 @@ BSTIterator.prototype.pushLeft = function(node) {
         node = node.left;
     }
 }
+
+/**
+ * Your BSTIterator will be called like this:
+ * var i = new BSTIterator(root), a = [];
+ * while (i.hasNext()) a.push(i.next());
+*/
+
+// having a stack to keep track of all the left!!!
+// it's like inorder traversal iterative a lot
+// push all left, after pop the root, go to it's right
+/**
+ * Definition for binary tree
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+
+/**
+ * @constructor
+ * @param {TreeNode} root - root of the binary search tree
+ */
+var BSTIterator = function(root) {
+    this.stack = [];
+    this.pushLeft(root);
+};
+
+BSTIterator.prototype.pushLeft = function(root) {
+    while (root !== null) {
+        this.stack.push(root);
+        root = root.left;
+    }
+};
+
+
+/**
+ * @this BSTIterator
+ * @returns {boolean} - whether we have a next smallest number
+ */
+BSTIterator.prototype.hasNext = function() {
+    return this.stack.length !== 0;
+};
+
+/**
+ * @this BSTIterator
+ * @returns {number} - the next smallest number
+ */
+BSTIterator.prototype.next = function() {
+    // all below only happens when this.hasNext is true!!!!!
+    if (this.hasNext) {
+        let cur = this.stack.pop();
+        if (cur.right !== null) {// inorder, left, root, right, after pop root, needs to handle right too! push right in!!!
+            this.pushLeft(cur.right);
+        }
+        return cur.val;
+    }
+
+};
 
 /**
  * Your BSTIterator will be called like this:
