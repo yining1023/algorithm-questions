@@ -1,3 +1,4 @@
+278. First Bad Version
 // You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
 
 // Suppose you have n versions [1, 2, ..., n] and you want to find out the first bad one, which causes all the following ones to be bad.
@@ -6,7 +7,17 @@
 
 /**
  * Definition for isBadVersion()
- * 
+ *
+ * @param {integer} version number
+ * @return {boolean} whether the version is bad
+ * isBadVersion = function(version) {
+ *     ...
+ * };
+ */
+
+/**
+ * Definition for isBadVersion()
+ *
  * @param {integer} version number
  * @return {boolean} whether the version is bad
  * isBadVersion = function(version) {
@@ -28,25 +39,25 @@ var solution = function(isBadVersion) {
         if (n < 1) {
             return -1;
         }
-        
+
         var start = 1,
             end = n,
             mid;
-        
+
         while(start + 1 < end) {
             mid = start + parseInt((end - start) / 2);
-            
-            if (isBadVersion(mid)) {
+
+            if (isBadVersion(mid)) {//往前找
                 end = mid;
             } else {
                 start = mid;
             }
         }
-        
+        // check start first, because it's finding first position
         if (isBadVersion(start)) {
             return start;
         }
-                    
+
         if (isBadVersion(end)) {
             return end;
         }

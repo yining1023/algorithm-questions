@@ -29,14 +29,14 @@ public class Solution extends GuessGame {
     public int guessNumber(int n) {
         int start = 1, end = n; // start starts from 1
         int mid;
-        
+
         while (start + 1 < end) {
             mid = start + (end - start) / 2;
             if (guess(mid) == 0) {
                 return mid;
-            } else if (guess(mid) == 1) { // my number is lower, means the right number is lower
+            } else if (guess(mid) == 1) {
                 start = mid;
-            } else if (guess(mid) == -1) {
+            } else if (guess(mid) == -1) {// my number is lower, means the right number is lower
                 end = mid;
             }
         }

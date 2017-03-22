@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 331. Verify Preorder Serialization of a Binary Tree
 - 378. Kth Smallest Element in a Sorted Matrix
 - 399. Evaluate Division
 - 535. Encode and Decode TinyURL
