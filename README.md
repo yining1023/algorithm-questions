@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 310. Minimum Height Trees
 - 297. Serialize and Deserialize Binary Tree
 - 304. Range Sum Query 2D - Immutable
 - 314. Binary Tree Vertical Order Traversal
