@@ -38,7 +38,56 @@
  * @param {number[][]} prerequisites
  * @return {boolean}
  */
-// BFS 
+
+// bfs topological sorting!
+var canFinish = function(numCourses, prerequisites) {
+    let nodes = [],
+        indegrees = [];
+    // initialize the two aray
+    for (let i = 0; i < numCourses; i++) {
+        let node = {};
+        // neighbor为一个array
+        node.neighbors = [];
+        nodes.push(node);
+        indegrees.push(0);
+    }
+
+    // use prerequisite as their neighbors and indegree
+    for (let j = 0; j < prerequisites.length; j++) {
+        preNode = prerequisites[j][1];
+        neighbor = prerequisites[j][0];
+        nodes[preNode].neighbors.push(neighbor);
+
+        indegrees[neighbor]++;
+    }
+
+    let queue = [];
+    let count = 0;
+    // push all nodes with 0 indegree
+    for (let k = 0; k < indegrees.length; k++) {
+        if (indegrees[k] === 0) {
+            queue.push(nodes[k]);// push the real node in, not the indegree
+        }
+    }
+
+    while (queue.length > 0) {
+        let node = queue.shift();
+        count++;
+        console.log(node);
+        node.neighbors.forEach((neighbor) => {
+            indegrees[neighbor]--;
+            if (indegrees[neighbor] === 0) queue.push(nodes[neighbor]);// push the real node in, not the neighbor index
+        });
+
+    }
+
+
+    return count === numCourses;
+};
+
+
+
+// BFS
 var canFinish = function(numCourses, prerequisites) {
     // new a graph structure
     let nodes = [];
@@ -50,20 +99,20 @@ var canFinish = function(numCourses, prerequisites) {
         // neighbor为一个array
         node.neighbor = [];
         nodes.push(node);
-        
+
         // fill all indegrees with 0
         indegrees.push(0);
     }
-    
+
     // fill in the neighbors, and indegrees
     for (let j = 0; j < prerequisites.length; j++) {
         neighborNode = prerequisites[j][0];
         preNode = prerequisites[j][1];
         nodes[preNode].neighbor.push(neighborNode);
-        
+
         indegrees[neighborNode]++;
     }
-    
+
     // bfs
     let queue = [],
         count = 0;
@@ -84,7 +133,7 @@ var canFinish = function(numCourses, prerequisites) {
             }
         }
     }
-    
+
     return count === numCourses;
 };
 
@@ -115,7 +164,7 @@ var canFinish = function(numCourses, prerequisites) {
 // var dfs = function(startNode, parents) {
 //     if (parents.indexOf(startNode) >= 0) return true;
 //     if (startNode.visited) return false;
-    
+
 //     startNode.visited = true;
 //     var neighbors = startNode.neighbors;
 //     parents.push(startNode);
@@ -128,7 +177,7 @@ var canFinish = function(numCourses, prerequisites) {
 
 // var canFinish = function(numCourses, prerequisites) {
 //     var nodes = constructGraph(numCourses, prerequisites);
-    
+
 //     for (var i = 0; i < nodes.length; i++) {
 //         var parent = [];
 //         var hasCycle = dfs(nodes[i], parent);
