@@ -60,7 +60,7 @@ Hide Similar Problems (E) Range Sum Query - Immutable (H) Range Sum Query 2D - M
  * @param {number[][]} matrix
  */
 // use .fill(0) with caution, fill copy it with reference, so later when only change matrix[i][j] the whole col all would be changed
-
+// O(mn) space with O(1) time
 var sumMatrix;
 var row, col;
 var NumMatrix = function(matrix) {
