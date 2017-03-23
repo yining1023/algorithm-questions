@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 304. Range Sum Query 2D - Immutable
 - 314. Binary Tree Vertical Order Traversal
 - 50. Pow(x, n)
 - 94. Binary Tree Inorder Traversal
