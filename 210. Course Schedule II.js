@@ -31,7 +31,13 @@
  * @return {number[]}
  */
 
-// BFS 
+/**
+ * @param {number} numCourses
+ * @param {number[][]} prerequisites
+ * @return {number[]}
+ */
+
+// BFS
 var findOrder = function(numCourses, prerequisites) {
     // new a graph structure
     let nodes = [];
@@ -43,24 +49,24 @@ var findOrder = function(numCourses, prerequisites) {
         // neighbor为一个array
         node.neighbor = [];
         nodes.push(node);
-        
+
         // fill all indegrees with 0
         indegrees.push(0);
     }
-    
+
     // fill in the neighbors, and indegrees
     for (let j = 0; j < prerequisites.length; j++) {
         neighborNode = prerequisites[j][0];
         preNode = prerequisites[j][1];
         nodes[preNode].neighbor.push(neighborNode);
-        
+
         indegrees[neighborNode]++;
     }
-    
+
     // bfs
     let queue = [],
         count = 0,
-        order = [];
+        order = [];// order would the answer, course order list
 
     for (let m = 0; m < indegrees.length; m++) {
         if (indegrees[m] === 0) {
@@ -71,7 +77,7 @@ var findOrder = function(numCourses, prerequisites) {
 
     while (queue.length > 0) {
         let head = queue.shift();
-        order[count] = head;
+        order[count] = head;//order[0] order[1]...
         count++;
         for (var n = 0; n < nodes[head].neighbor.length; n++) {
             indegrees[nodes[head].neighbor[n]]--;
@@ -80,11 +86,10 @@ var findOrder = function(numCourses, prerequisites) {
             }
         }
     }
-    
+
     if (count === numCourses) {
         return order;
     }
-    
+
     return [];
 };
-
