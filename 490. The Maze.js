@@ -53,7 +53,7 @@ Hide Similar Problems (H) The Maze III (M) The Maze II
  * @param {number[]} destination
  * @return {boolean}
  */
-// 1. dfs
+// 1. dfs O(V+E), V<=m*n, E<=m*n*4, O(mn)
 // Search in the four possible directions when coming to a stopping point (i.e. a new starting point).
 // Keep track of places that you already started at in case you roll back to that point.
 var hasPath = function(maze, start, destination) {
@@ -73,14 +73,14 @@ var directionX = [1, -1, 0, 0],
     directionY = [0, 0, 1, -1];
 
 function dfs(maze, visited, start, destination) {
-    if (start[0] === destination[0] && start[1] === destination[1]) return true;
-    if (visited[start[0]][start[1]]) return false;
+    if (start[0] === destination[0] && start[1] === destination[1]) return true;//find it!
+    if (visited[start[0]][start[1]]) return false;//already visted, not valid spot,
 
-    visited[start[0]][start[1]] = true;
+    visited[start[0]][start[1]] = true;// mark it as visited
 
     let newStart;
     for (let k = 0; k < 4; k++) {// 4 directions
-        newStart = roll(maze, start[0], start[1], directionX[k], directionY[k]);
+        newStart = roll(maze, start[0], start[1], directionX[k], directionY[k]);// get one new start
         if (dfs(maze, visited, newStart, destination)) return true;//if its neighbor find it, here true here too!!!
     }
 
@@ -99,3 +99,55 @@ function canRoll(maze, x, y) {
     if (x < 0 || y < 0 || x >= maze.length || y >= maze[0].length) return false;
     return maze[x][y] !== 1;
 }
+
+// 2. bfs O(V+E), V<=m*n, E<=m*n*4, O(mn)
+var hasPath = function(maze, start, destination) {
+    var m = maze.length, n = maze[0].length;
+    var visited = [];
+    for (let i = 0; i < m; i++) {
+        visited.push([]);
+        for (let j = 0; j < n; j++) {
+            visited[i].push(false);
+        }
+    }
+
+    var directionX = [1, -1, 0, 0];
+    var directionY = [0, 0, 1, -1];
+
+    // bfs
+    var queue = [];
+    if (start[0] === destination[0] && start[1] === destination[1]) return true;//find it! if not push it into queue
+    queue.push(start);
+    visited[start[0]][start[1]] = true; // two good friends
+
+    while (queue.length > 0) {
+        let current = queue.shift();
+        let curX = current[0], curY = current[1];
+
+        for (let k = 0; k < 4; k++) {
+            let neighbor = roll(maze, curX, curY, directionX[k], directionY[k]);
+            if (visited[neighbor[0]][neighbor[1]]) continue;
+
+            visited[neighbor[0]][neighbor[1]] = true;
+            if (neighbor[0] === destination[0] && neighbor[1] === destination[1]) return true;//find it!
+            queue.push(neighbor);
+        }
+
+    }
+    return false;
+};
+
+function roll(maze, startX, startY, directionX, directionY) {
+    while (canRoll(maze, startX + directionX, startY + directionY)) {
+        startX = startX + directionX;
+        startY = startY + directionY;
+    }
+    return [startX, startY];
+}
+
+function canRoll(maze, x, y) {
+    if (x < 0 || y < 0 || x >= maze.length || y >= maze[0].length) return false;
+    return maze[x][y] !== 1;
+}
+
+
