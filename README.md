@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 544. Output Contest Matches
 - 505. The Maze II
 - 490. The Maze
 - 310. Minimum Height Trees
