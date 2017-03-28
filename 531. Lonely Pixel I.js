@@ -53,5 +53,34 @@ var findLonelyPixel = function(picture) {
 };
 
 // O(mn) time, O(1) space
-var findLonelyPixel = function(picture) {};
+var findLonelyPixel = function(picture) {
+    let m = picture.length, n = picture[0].length;
+    let firstRowCount = 0;
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            if (picture[i][j] === 'B') {
+                if (picture[0][j] < 'Y' && picture[0][j] !== 'V') {
+                    picture[0][j] = nextChar(picture[0][j]);
+                }
+                if (i === 0) firstRowCount++;
+                else if (picture[i][0] < 'Y' && picture[i][0] !== 'V') picture[i][0] = nextChar(picture[i][0]);
+            }
+        }
+    }
 
+    let count = 0;
+
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            if (picture[i][j] < 'W' && (picture[0][j] === 'X' || picture[0][j] === 'C'))
+                if (i === 0) count += (firstRowCount === 1) ? 1 : 0;
+                else if (picture[i][0] === 'X' || picture[i][0] === 'C') count++;
+        }
+    }
+
+    return count;
+
+    function nextChar(c) {
+        return String.fromCharCode(c.charCodeAt(0) + 1);
+    }
+};
