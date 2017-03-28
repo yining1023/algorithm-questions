@@ -2,6 +2,9 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 542. 01 Matrix
+- 531. Lonely Pixel I
+- 533. Lonely Pixel II
 - 544. Output Contest Matches
 - 505. The Maze II
 - 490. The Maze
