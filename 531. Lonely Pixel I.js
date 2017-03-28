@@ -53,6 +53,14 @@ var findLonelyPixel = function(picture) {
 };
 
 // O(mn) time, O(1) space
+// use the matrix to store the colcount and rowcounr info
+// if 'B', picture[0][j] < 'Y' && picture[0][j] !== 'V', picture[0][j]++;
+// picture[i][0] < 'Y' && picture[i][0] !== 'V', picture[i][0]++
+// firstRowCount
+
+// if (picture[i][j] < 'W'  means it was B
+// && (picture[0][j] === 'X' || picture[0][j] === 'C')) means only 1 'B' on this col
+// picture[i][0] === 'X' || picture[i][0] === 'C' means only 1 'B' on this row
 var findLonelyPixel = function(picture) {
     let m = picture.length, n = picture[0].length;
     let firstRowCount = 0;
