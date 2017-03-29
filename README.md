@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 496. Next Greater Element I
 - 545. Boundary of Binary Tree
 - 524. Longest Word in Dictionary through Deleting
 - 526. Beautiful Arrangement
