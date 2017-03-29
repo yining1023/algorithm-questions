@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 524. Longest Word in Dictionary through Deleting
 - 526. Beautiful Arrangement
 - 527. Word Abbreviation
 - 542. 01 Matrix
