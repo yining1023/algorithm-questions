@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 484. Find Permutation
 - 451. Sort Characters By Frequency
 - 421. Maximum XOR of Two Numbers in an Array
 - 498. Diagonal Traverse
