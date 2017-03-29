@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 527. Word Abbreviation
 - 542. 01 Matrix
 - 531. Lonely Pixel I
 - 533. Lonely Pixel II
