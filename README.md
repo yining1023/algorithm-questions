@@ -2,6 +2,7 @@
 
 Answers for algorithm-questions from Leetcode in Javascript.
 
+- 498. Diagonal Traverse
 - 503. Next Greater Element II
 - 496. Next Greater Element I
 - 545. Boundary of Binary Tree
