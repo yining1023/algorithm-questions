@@ -46,31 +46,31 @@ Hide Similar Problems (M) Top K Frequent Elements
 // hashmap
 
 // 1. with sorting O(nlogn) time
-// var frequencySort = function(s) {
-//     if (s === null || s.length === 0) return s;
+var frequencySort = function(s) {
+    if (s === null || s.length === 0) return s;
 
-//     let results = '';
-//     let map = new Map();
-//     // 1. get map
-//     for (let i = 0; i < s.length; i++) {
-//         if (map.has(s[i])) { map.set(s[i], map.get(s[i]) + 1); }
-//         else { map.set(s[i], 1); }
-//     }
+    let results = '';
+    let map = new Map();
+    // 1. get map
+    for (let i = 0; i < s.length; i++) {
+        if (map.has(s[i])) { map.set(s[i], map.get(s[i]) + 1); }
+        else { map.set(s[i], 1); }
+    }
 
-//     // 2. sort map, nlogn
-//     let frequency = [...map].sort( (a, b) => {return b[1] - a[1]});//decreasing order b - a
+    // 2. sort map, nlogn
+    let frequency = [...map].sort( (a, b) => {return b[1] - a[1]});//decreasing order b - a
 
-//     // 3. form results
-//     for (let j = 0; j < frequency.length; j++) {
-//         let result = '';
-//         for (let k = 0; k < frequency[j][1]; k++) {
-//             result += frequency[j][0];
-//         }
-//         results += result;
-//     }
+    // 3. form results
+    for (let j = 0; j < frequency.length; j++) {
+        let result = '';
+        for (let k = 0; k < frequency[j][1]; k++) {
+            result += frequency[j][0];
+        }
+        results += result;
+    }
 
-//     return results;
-// };
+    return results;
+};
 
 // 2. without sort, O(n) time, but with extra space
 var frequencySort = function(s) {

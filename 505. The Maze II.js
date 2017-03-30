@@ -54,7 +54,7 @@ Hide Similar Problems (M) The Maze (H) The Maze III
  * @param {number[]} destination
  * @return {number}
  */
-// 1. bfs
+// 1. bfs + visited matrix; queue: {start: [x, y], steps: number}
 var shortestDistance = function(maze, start, destination) {
     var m = maze.length, n = maze[0].length;
     var visited = [];// use visited matrix to track the length, from start to this point

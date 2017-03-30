@@ -34,7 +34,7 @@ Hide Similar Problems (E) K-diff Pairs in an Array
  * @param {TreeNode} root
  * @return {number}
  */
-// BST, in order traverse, get all nodes, for current and prev, get diff
+// BSearchT, in order traverse, get all nodes, for current and prev, get diff
 // O(n) time
 var getMinimumDifference = function(root) {
     var pre, minDiff = Infinity;

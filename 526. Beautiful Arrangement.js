@@ -55,9 +55,9 @@ function dfsHelper(N, pos, visited) {
     for (let i = 1; i <= N; i++) {
         if (!visited[i] && isBeautiful(i, pos)) {
             //count 不是说一个组合里有几个beautiful组合，只有所有数都满足条件，整个组合算是一个count
-            visited[i] = true;
+            visited[i] = true;// push
             dfsHelper(N, pos + 1, visited);
-            visited[i] = false;
+            visited[i] = false;// pop
         }
     }
 }

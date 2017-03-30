@@ -40,7 +40,7 @@ Hide Tags Recursion String
 var findContestMatch = function(n) {
     let arr = new Array(n);
     for (let k = 0; k < n; k++) arr[k] = k + 1; //example: n = 8; arr = [1,2,3,4,5,6,7,8], = k + 1, not n + 1, n +1 won't change
-    console.log(arr);
+
     let left = 0, right = n - 1; // i, j are the index, from 0
     while (left < right) {
         while (left < right) {

@@ -32,7 +32,8 @@ Hide Company Tags Google
  */
 // two pointers, head, tail, new number is either 1 or 2, a[head] decides how many 1 or 2
 // Create an int array a and initialize the first 3 elements with 1, 2, 2.
-// Create two pointers head and tail. head points to the number which will be used to generate new numbers. tail points to the next empty position to put the new number. Then keep generating new numbers until tail >= n.
+// Create two pointers head and tail. head points to the number which will be used to generate new numbers.
+// tail points to the next empty position to put the new number. Then keep generating new numbers until tail >= n.
 // Need to create the array 1 element more than n to avoid overflow because the last round head might points to a number 2.
 // A trick to flip number back and forth between 1 and 2: num = num ^ 3
 var magicalString = function(n) {

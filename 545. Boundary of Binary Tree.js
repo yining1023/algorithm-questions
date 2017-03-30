@@ -75,7 +75,7 @@ var boundaryOfBinaryTree = function(root) {
 
     function leftBoundary(root) {
         if (root === null || (root.left === null && root.right === null)) return;
-        // when it's a leave node, skip it,lleave if fot the leaves function
+        // when it's a leave node, skip it, leave it for the leaves function
 
         nodes.push(root.val);
         if (root.left === null) leftBoundary(root.right);
@@ -84,7 +84,7 @@ var boundaryOfBinaryTree = function(root) {
 
     function rightBoundary(root) {
         if (root === null || (root.left === null && root.right === null)) return;
-        // when it's a leave node, skip it,lleave if fot the leaves function
+        // when it's a leave node, skip it, leave it fot the leaves function
 
         if (root.right === null) rightBoundary(root.left);// check if it has right, no, go to it's left, yes, go to right
         else rightBoundary(root.right);
